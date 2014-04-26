@@ -137,6 +137,7 @@ namespace bocd
             m_Res[1] = Convert.ToInt32(this.textZiXin.Text);
             m_Res[2] = Convert.ToInt32(this.textShenPi.Text);
             string str;
+            m_detail = "";
 	        str = String.Format(" 初  始 ：      录入剩余{0} 件，资信剩余{1} 件，审批剩余{2} 件\r\n\r\n", m_Res[0], m_Res[1], m_Res[2]);
             m_detail += str;
 	        while(m_Res[0]!=0 || m_Res[1]!=0 || m_Res[2]!=0)

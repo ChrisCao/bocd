@@ -11,6 +11,7 @@ namespace bocd
 {
     public partial class Form2 : Form
     {
+        private string[] strsTemp = new string[6];
         public Form2()
         {
             InitializeComponent();
@@ -26,28 +27,35 @@ namespace bocd
         public void SetLuRuNumText(string str)
         {
             this.textLuRu_Num.Text = str;
+            strsTemp[0] = str;
         }
-
         public void SetLuRuEveryText(string str)
         {
             this.textLuRu_Every.Text = str;
+            strsTemp[1] = str;
         }
         public void SetZiXinNumText(string str)
         {
             this.textZiXin_Num.Text = str;
+            strsTemp[2] = str;
         }
         public void SetZiXinEveryText(string str)
         {
             this.textZiXin_Every.Text = str;
+            strsTemp[3] = str;
         }
         public void SetShenPiNumText(string str)
         {
             this.textShenPi_Num.Text = str;
+            strsTemp[4] = str;
         }
         public void SetShenPiEveryText(string str)
         {
             this.textShenPi_Every.Text = str;
+            strsTemp[5] = str;
         }
+
+
         public string GetLuRuNumText()
         {
             return this.textLuRu_Num.Text;
@@ -137,6 +145,21 @@ namespace bocd
                     e.Handled = true;
                 }
             }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.textLuRu_Num.Text = strsTemp[0];
+            this.textLuRu_Every.Text = strsTemp[1];
+            this.textZiXin_Num.Text = strsTemp[2];
+            this.textZiXin_Every.Text = strsTemp[3];
+            this.textShenPi_Num.Text = strsTemp[4];
+            this.textShenPi_Every.Text = strsTemp[5];
         }
     }
 }
