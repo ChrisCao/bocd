@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
@@ -15,11 +14,13 @@ namespace bocd
         private int[] m_Res = new int[3];
         private int[] m_Num = new int[3];
         private int[] m_Every = new int[3];
+        private string m_log;
+        private string m_detail;
         public Form1()
         {
             InitializeComponent();
             this.textBox1.Visible = false;
-            this.labelNum.Text = "000";
+            this.labelNum.Text = "  0";
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             path += "\\bocd.cfg";
@@ -47,6 +48,7 @@ namespace bocd
             this.textLuRu.Text = Convert.ToString(m_Res[0]);
             this.textZiXin.Text = Convert.ToString(m_Res[0]);
             this.textShenPi.Text = Convert.ToString(m_Res[0]);
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void textLuRu_KeyPress(object sender, KeyPressEventArgs e)
@@ -116,13 +118,13 @@ namespace bocd
             {
                 if (m_Num[i] == 0 || m_Every[i] == 0)
                 {
-                    MessageBox.Show(this, "请设置人数和每日完成数！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Form3 form3 = new Form3();
+                    form3.ShowDialog();
                     return;
                 }
             }
 
 
-	        string log = "";
 	        int dayindex = 0;
 	        int[] reduceEvery = new int[3];
 	        for (int i=0; i<3; i++)
@@ -136,7 +138,7 @@ namespace bocd
             m_Res[2] = Convert.ToInt32(this.textShenPi.Text);
             string str;
 	        str = String.Format(" 初  始 ：      录入剩余{0} 件，资信剩余{1} 件，审批剩余{2} 件\r\n\r\n", m_Res[0], m_Res[1], m_Res[2]);
-	        log += str;
+            m_detail += str;
 	        while(m_Res[0]!=0 || m_Res[1]!=0 || m_Res[2]!=0)
 	        {
 		        if (m_Res[0]>reduceEvery[0])
@@ -175,16 +177,16 @@ namespace bocd
 		        m_Res[1] += today[0];
 		        m_Res[2] += today[1];
 		        dayindex++;
-		        str = String.Format("第{0,4}天 录入：完成{1,4} 件，剩余{2,4} 件\r\n         资信：新增{3,4} 件，完成{4,4} 件，剩余{5,4} 件\r\n         审批：新增{6,4} 件，完成{7,4} 件，剩余{8,4} 件\r\n\r\n", 
+                str = String.Format("第{0,4}天 录入：完成{1,4} 件，剩余{2,4} 件\r\n            资信：新增{3,4} 件，完成{4,4} 件，剩余{5,4} 件\r\n            审批：新增{6,4} 件，完成{7,4} 件，剩余{8,4} 件\r\n\r\n", 
 						        dayindex, today[0], m_Res[0], today[0], today[1], m_Res[1], today[1], today[2], m_Res[2]);
-		        log += str;
+                m_detail += str;
 	        }
 
 
 	        str = String.Format("预计 {0} 天完成现有存件\r\n\r\n", dayindex);
-	        log = str+log;
+            m_detail = str + m_detail;
 
-            this.textBox1.Text = log;
+            this.textBox1.Text = m_detail;
             str = String.Format("{0,03}", dayindex);
             this.labelNum.Text = str;
 

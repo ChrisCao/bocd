@@ -8,3 +8,17 @@ d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\GenerateResourc
 d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.exe
 d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.pdb
 d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.Form2.resources
+E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.exe
+E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.pdb
+E:\CaoXin\bocd\bocd\bin\Debug\bocd.exe.config
+E:\CaoXin\bocd\bocd\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.Form1.resources
+E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.Form2.resources
+E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.Properties.Resources.resources
+E:\CaoXin\bocd\bocd\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\CaoXin\bocd\bocd\obj\x86\Debug\ResGen.read.1.tlog
+E:\CaoXin\bocd\bocd\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\CaoXin\bocd\bocd\obj\x86\Debug\ResGen.write.1.tlog
+E:\CaoXin\bocd\bocd\bin\Debug\bocd.exe
+E:\CaoXin\bocd\bocd\bin\Debug\bocd.pdb
+E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.Form3.resources

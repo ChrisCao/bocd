@@ -105,7 +105,7 @@
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(7, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(206, 390);
+            this.groupBox1.Size = new System.Drawing.Size(207, 390);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "存量";
@@ -189,7 +189,7 @@
             this.labelNum.AutoSize = true;
             this.labelNum.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNum.ForeColor = System.Drawing.Color.Red;
-            this.labelNum.Location = new System.Drawing.Point(466, 136);
+            this.labelNum.Location = new System.Drawing.Point(465, 136);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(111, 62);
             this.labelNum.TabIndex = 8;
@@ -213,18 +213,19 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(534, 294);
+            this.textBox1.Size = new System.Drawing.Size(535, 294);
             this.textBox1.TabIndex = 10;
             // 
             // buttonCompute
             // 
+            this.buttonCompute.BackColor = System.Drawing.SystemColors.Window;
             this.buttonCompute.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCompute.Location = new System.Drawing.Point(296, 375);
+            this.buttonCompute.Location = new System.Drawing.Point(297, 375);
             this.buttonCompute.Name = "buttonCompute";
             this.buttonCompute.Size = new System.Drawing.Size(115, 37);
             this.buttonCompute.TabIndex = 4;
             this.buttonCompute.Text = "推算";
-            this.buttonCompute.UseVisualStyleBackColor = true;
+            this.buttonCompute.UseVisualStyleBackColor = false;
             this.buttonCompute.Click += new System.EventHandler(this.buttonCompute_Click);
             // 
             // Form1
@@ -242,6 +243,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

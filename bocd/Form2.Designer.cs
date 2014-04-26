@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textLuRu_Every = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.textLuRu_Num = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textZiXin_Every = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -80,6 +81,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "人均录入：";
             // 
+            // textLuRu_Num
+            // 
+            this.textLuRu_Num.Location = new System.Drawing.Point(18, 78);
+            this.textLuRu_Num.Name = "textLuRu_Num";
+            this.textLuRu_Num.Size = new System.Drawing.Size(157, 33);
+            this.textLuRu_Num.TabIndex = 1;
+            this.textLuRu_Num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textLuRu_Num_KeyPress);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -89,14 +98,6 @@
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "人数：";
-            // 
-            // textLuRu_Num
-            // 
-            this.textLuRu_Num.Location = new System.Drawing.Point(18, 78);
-            this.textLuRu_Num.Name = "textLuRu_Num";
-            this.textLuRu_Num.Size = new System.Drawing.Size(157, 33);
-            this.textLuRu_Num.TabIndex = 1;
-            this.textLuRu_Num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textLuRu_Num_KeyPress);
             // 
             // groupBox2
             // 
@@ -207,6 +208,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";

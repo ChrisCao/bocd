@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 
@@ -20,6 +20,7 @@ namespace bocd
             this.textZiXin_Every.Text = "0";
             this.textShenPi_Num.Text = "0";
             this.textShenPi_Every.Text = "0";
+            this.StartPosition = FormStartPosition.CenterParent;
         }
 
         public void SetLuRuNumText(string str)
