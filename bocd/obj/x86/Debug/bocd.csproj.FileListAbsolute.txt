@@ -1,0 +1,10 @@
+d:\documents\visual studio 2010\Projects\bocd\bocd\bin\Debug\bocd.exe
+d:\documents\visual studio 2010\Projects\bocd\bocd\bin\Debug\bocd.pdb
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.Form1.resources
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.Properties.Resources.resources
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\GenerateResource.read.1.tlog
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\GenerateResource.write.1.tlog
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.exe
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.pdb
+d:\documents\visual studio 2010\Projects\bocd\bocd\obj\x86\Debug\bocd.Form2.resources
