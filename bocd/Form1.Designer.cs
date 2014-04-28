@@ -45,8 +45,9 @@
             this.labelSecond = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonCompute = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonSaveLog = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +55,7 @@
             // 
             // menuStrip2
             // 
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.Window;
+            this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.主页HToolStripMenuItem,
@@ -93,9 +94,11 @@
             this.日志LToolStripMenuItem.Name = "日志LToolStripMenuItem";
             this.日志LToolStripMenuItem.Size = new System.Drawing.Size(84, 29);
             this.日志LToolStripMenuItem.Text = "日志(&L)";
+            this.日志LToolStripMenuItem.Click += new System.EventHandler(this.日志LToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textShenPi);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textZiXin);
@@ -103,7 +106,7 @@
             this.groupBox1.Controls.Add(this.textLuRu);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 36);
+            this.groupBox1.Location = new System.Drawing.Point(14, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 390);
             this.groupBox1.TabIndex = 2;
@@ -112,6 +115,7 @@
             // 
             // textShenPi
             // 
+            this.textShenPi.BackColor = System.Drawing.Color.AliceBlue;
             this.textShenPi.Location = new System.Drawing.Point(18, 285);
             this.textShenPi.Name = "textShenPi";
             this.textShenPi.Size = new System.Drawing.Size(157, 33);
@@ -121,6 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(13, 248);
             this.label3.Name = "label3";
@@ -130,6 +135,7 @@
             // 
             // textZiXin
             // 
+            this.textZiXin.BackColor = System.Drawing.Color.AliceBlue;
             this.textZiXin.Location = new System.Drawing.Point(18, 182);
             this.textZiXin.Name = "textZiXin";
             this.textZiXin.Size = new System.Drawing.Size(157, 33);
@@ -139,6 +145,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(13, 145);
             this.label2.Name = "label2";
@@ -148,6 +155,7 @@
             // 
             // textLuRu
             // 
+            this.textLuRu.BackColor = System.Drawing.Color.AliceBlue;
             this.textLuRu.Location = new System.Drawing.Point(18, 85);
             this.textLuRu.Name = "textLuRu";
             this.textLuRu.Size = new System.Drawing.Size(157, 33);
@@ -157,6 +165,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(13, 48);
             this.label1.Name = "label1";
@@ -167,6 +176,7 @@
             // labelFirst
             // 
             this.labelFirst.AutoSize = true;
+            this.labelFirst.BackColor = System.Drawing.Color.Transparent;
             this.labelFirst.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelFirst.Location = new System.Drawing.Point(301, 152);
             this.labelFirst.Name = "labelFirst";
@@ -177,6 +187,7 @@
             // labelSecond
             // 
             this.labelSecond.AutoSize = true;
+            this.labelSecond.BackColor = System.Drawing.Color.Transparent;
             this.labelSecond.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelSecond.Location = new System.Drawing.Point(583, 152);
             this.labelSecond.Name = "labelSecond";
@@ -187,6 +198,7 @@
             // labelNum
             // 
             this.labelNum.AutoSize = true;
+            this.labelNum.BackColor = System.Drawing.Color.Transparent;
             this.labelNum.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNum.ForeColor = System.Drawing.Color.Red;
             this.labelNum.Location = new System.Drawing.Point(465, 136);
@@ -197,28 +209,17 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(534, 363);
+            this.pictureBox1.Location = new System.Drawing.Point(469, 358);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(295, 77);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(237, 51);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(535, 294);
-            this.textBox1.TabIndex = 10;
-            // 
             // buttonCompute
             // 
-            this.buttonCompute.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonCompute.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonCompute.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonCompute.Location = new System.Drawing.Point(297, 375);
             this.buttonCompute.Name = "buttonCompute";
@@ -228,13 +229,38 @@
             this.buttonCompute.UseVisualStyleBackColor = false;
             this.buttonCompute.Click += new System.EventHandler(this.buttonCompute_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(234, 51);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(535, 294);
+            this.textBox1.TabIndex = 10;
+            // 
+            // buttonSaveLog
+            // 
+            this.buttonSaveLog.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonSaveLog.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSaveLog.Location = new System.Drawing.Point(297, 375);
+            this.buttonSaveLog.Name = "buttonSaveLog";
+            this.buttonSaveLog.Size = new System.Drawing.Size(115, 37);
+            this.buttonSaveLog.TabIndex = 11;
+            this.buttonSaveLog.Text = "导出";
+            this.buttonSaveLog.UseVisualStyleBackColor = false;
+            this.buttonSaveLog.Click += new System.EventHandler(this.buttonSaveLog_Click);
+            // 
             // Form1
             // 
-            this.AcceptButton = this.buttonCompute;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = global::bocd.Properties.Resources.未标题_21;
             this.ClientSize = new System.Drawing.Size(783, 438);
+            this.Controls.Add(this.buttonSaveLog);
             this.Controls.Add(this.buttonCompute);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelNum);
@@ -243,12 +269,14 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.textBox1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "余件推算——成都银行信用卡中心";
+            this.Text = "成都银行信用卡中心";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -277,8 +305,9 @@
         private System.Windows.Forms.Label labelSecond;
         private System.Windows.Forms.Label labelNum;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonCompute;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonSaveLog;
 
     }
 }

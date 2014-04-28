@@ -22,3 +22,14 @@ E:\CaoXin\bocd\bocd\obj\x86\Debug\ResGen.write.1.tlog
 E:\CaoXin\bocd\bocd\bin\Debug\bocd.exe
 E:\CaoXin\bocd\bocd\bin\Debug\bocd.pdb
 E:\CaoXin\bocd\bocd\obj\x86\Debug\bocd.Form3.resources
+D:\bocd\bocd\bin\Debug\bocd.exe.config
+D:\bocd\bocd\obj\x86\Debug\bocd.exe
+D:\bocd\bocd\obj\x86\Debug\bocd.pdb
+D:\bocd\bocd\bin\Debug\bocd.exe
+D:\bocd\bocd\bin\Debug\bocd.pdb
+D:\bocd\bocd\obj\x86\Debug\bocd.csprojResolveAssemblyReference.cache
+D:\bocd\bocd\obj\x86\Debug\bocd.Form1.resources
+D:\bocd\bocd\obj\x86\Debug\bocd.Form2.resources
+D:\bocd\bocd\obj\x86\Debug\bocd.Form3.resources
+D:\bocd\bocd\obj\x86\Debug\bocd.Properties.Resources.resources
+D:\bocd\bocd\obj\x86\Debug\bocd.csproj.GenerateResource.Cache

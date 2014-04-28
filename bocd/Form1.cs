@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace bocd
 {
@@ -14,15 +15,17 @@ namespace bocd
         private int[] m_Res = new int[3];
         private int[] m_Num = new int[3];
         private int[] m_Every = new int[3];
-        private string m_log;
+        private ArrayList m_log = new ArrayList();
         private string m_detail;
         public Form1()
         {
             InitializeComponent();
             this.textBox1.Visible = false;
+            this.buttonSaveLog.Visible = false;
             this.labelNum.Text = "  0";
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string pathLog = path+"\\bocd.txt";
             path += "\\bocd.cfg";
             if (File.Exists(path))
             {
@@ -41,6 +44,17 @@ namespace bocd
                     m_Num[2] = Convert.ToInt32(str);
                     str = srReadFile.ReadLine();
                     m_Every[2] = Convert.ToInt32(str);
+                }
+                srReadFile.Close();
+            }
+            if (File.Exists(pathLog))
+            {
+                StreamReader srReadFile = new StreamReader(pathLog);
+                while (!srReadFile.EndOfStream)
+                {
+                    string str = srReadFile.ReadLine();
+                    if (str.Length>0)
+                        m_log.Add(str);
                 }
                 srReadFile.Close();
             }
@@ -96,6 +110,11 @@ namespace bocd
             form2.ShowDialog();
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             path += "\\bocd.cfg";
+            if (File.Exists(path))
+            {
+                FileInfo fi1 = new FileInfo(path);
+                fi1.Attributes = fi1.Attributes & ~FileAttributes.Hidden;
+            }
             StreamWriter srWriteFile = new StreamWriter(path);
             srWriteFile.WriteLine(form2.GetLuRuNumText());
             srWriteFile.WriteLine(form2.GetLuRuEveryText());
@@ -110,6 +129,8 @@ namespace bocd
             m_Every[1] = Convert.ToInt32(form2.GetZiXinEveryText());
             m_Every[2] = Convert.ToInt32(form2.GetShenPiEveryText());
             srWriteFile.Close();
+            FileInfo fi2 = new FileInfo(path);
+            fi2.Attributes = fi2.Attributes | FileAttributes.Hidden;
         }
 
         private void buttonCompute_Click(object sender, EventArgs e)
@@ -140,6 +161,10 @@ namespace bocd
             m_detail = "";
 	        str = String.Format(" 初  始 ：      录入剩余{0} 件，资信剩余{1} 件，审批剩余{2} 件\r\n\r\n", m_Res[0], m_Res[1], m_Res[2]);
             m_detail += str;
+            
+            string log = String.Format("{0} {1}\tlr/{2}/人均{3}/存量{4}/zh/{5}/人均{6}/存量{7}/sp/{8}/人均{9}/存量{10}/------",
+                                 DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), m_Num[0], m_Every[0], m_Res[0], m_Num[1], m_Every[1], m_Res[1], m_Num[2], m_Every[2], m_Res[2]);
+
 	        while(m_Res[0]!=0 || m_Res[1]!=0 || m_Res[2]!=0)
 	        {
 		        if (m_Res[0]>reduceEvery[0])
@@ -186,12 +211,29 @@ namespace bocd
 
 	        str = String.Format("预计 {0} 天完成现有存件\r\n\r\n", dayindex);
             m_detail = str + m_detail;
+            log += String.Format("预计{0}天完成", dayindex);
+            m_log.Add(log);
+            if (m_log.Count > 200)
+                m_log.RemoveRange(0, m_log.Count - 200);
 
-            this.textBox1.Text = m_detail;
             str = String.Format("{0,03}", dayindex);
             this.labelNum.Text = str;
+            string pathLog = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\bocd.txt";
+            if (File.Exists(pathLog))
+            {
+                FileInfo fi1 = new FileInfo(pathLog);
+                fi1.Attributes = fi1.Attributes & ~FileAttributes.Hidden;
+            }
+            StreamWriter srWriteFile = new StreamWriter(pathLog);
+            foreach (string i in m_log)
+                srWriteFile.WriteLine(i);
+            srWriteFile.Close();
+            FileInfo fi2 = new FileInfo(pathLog);
+            fi2.Attributes = fi2.Attributes | FileAttributes.Hidden;
 
             this.textBox1.Visible = false;
+            this.buttonSaveLog.Visible = false;
+            this.buttonCompute.Visible = true;
             this.labelFirst.Visible = true;
             this.labelNum.Visible = true;
             this.labelSecond.Visible = true;
@@ -200,6 +242,8 @@ namespace bocd
         private void 主页HToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.textBox1.Visible = false;
+            this.buttonSaveLog.Visible = false;
+            this.buttonCompute.Visible = true;
             this.labelFirst.Visible = true;
             this.labelNum.Visible = true;
             this.labelSecond.Visible = true;
@@ -208,9 +252,40 @@ namespace bocd
         private void 详情DToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.textBox1.Visible = true;
+            this.buttonCompute.Visible = true;
+            this.buttonSaveLog.Visible = false;
             this.labelFirst.Visible = false;
             this.labelNum.Visible = false;
             this.labelSecond.Visible = false;
+            this.textBox1.Text = m_detail;
+        }
+
+        private void 日志LToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Visible = true;
+            this.buttonSaveLog.Visible = true;
+            this.buttonCompute.Visible = false;
+            this.labelFirst.Visible = false;
+            this.labelNum.Visible = false;
+            this.labelSecond.Visible = false;
+            string log = "";
+            foreach (string str in m_log)
+                log += str + "\r\n";
+            this.textBox1.Text = log;
+        }
+
+        private void buttonSaveLog_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog=new SaveFileDialog(); 
+            saveFileDialog.Filter="日志文件|*.txt"; 
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.RestoreDirectory=true; 
+            if(saveFileDialog.ShowDialog()==DialogResult.OK) 
+            {
+                StreamWriter srWriteFile = new StreamWriter(saveFileDialog.FileName.ToString());
+                srWriteFile.WriteLine(this.textBox1.Text);
+                srWriteFile.Close();
+            } 
         }
     }
 }

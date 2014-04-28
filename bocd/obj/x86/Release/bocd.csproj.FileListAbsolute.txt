@@ -1,0 +1,11 @@
+D:\bocd\bocd\bin\Release\bocd.exe.config
+D:\bocd\bocd\bin\Release\bocd.exe
+D:\bocd\bocd\bin\Release\bocd.pdb
+D:\bocd\bocd\obj\x86\Release\bocd.Form1.resources
+D:\bocd\bocd\obj\x86\Release\bocd.Form2.resources
+D:\bocd\bocd\obj\x86\Release\bocd.Form3.resources
+D:\bocd\bocd\obj\x86\Release\bocd.Properties.Resources.resources
+D:\bocd\bocd\obj\x86\Release\bocd.csproj.GenerateResource.Cache
+D:\bocd\bocd\obj\x86\Release\bocd.exe
+D:\bocd\bocd\obj\x86\Release\bocd.pdb
+D:\bocd\bocd\obj\x86\Release\bocd.csprojResolveAssemblyReference.cache
