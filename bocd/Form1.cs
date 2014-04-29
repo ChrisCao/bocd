@@ -22,6 +22,7 @@ namespace bocd
             InitializeComponent();
             this.textBox1.Visible = false;
             this.buttonSaveLog.Visible = false;
+            this.buttonClear.Visible = false;
             this.labelNum.Text = "  0";
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -162,8 +163,8 @@ namespace bocd
 	        str = String.Format(" 初  始 ：      录入剩余{0} 件，资信剩余{1} 件，审批剩余{2} 件\r\n\r\n", m_Res[0], m_Res[1], m_Res[2]);
             m_detail += str;
             
-            string log = String.Format("{0} {1}\tlr/{2}/人均{3}/存量{4}/zh/{5}/人均{6}/存量{7}/sp/{8}/人均{9}/存量{10}/------",
-                                 DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), m_Num[0], m_Every[0], m_Res[0], m_Num[1], m_Every[1], m_Res[1], m_Num[2], m_Every[2], m_Res[2]);
+            string log = String.Format("{0}/lr/{1}/{2}/{3}/zh/{4}/{5}/{6}/sp/{7}/{8}/{9}/预计/",
+                                 string.Format("{0:yyyyMMdd/HH:mm:ss}",DateTime.Now), m_Num[0], m_Every[0], m_Res[0], m_Num[1], m_Every[1], m_Res[1], m_Num[2], m_Every[2], m_Res[2]);
 
 	        while(m_Res[0]!=0 || m_Res[1]!=0 || m_Res[2]!=0)
 	        {
@@ -208,10 +209,9 @@ namespace bocd
                 m_detail += str;
 	        }
 
-
 	        str = String.Format("预计 {0} 天完成现有存件\r\n\r\n", dayindex);
             m_detail = str + m_detail;
-            log += String.Format("预计{0}天完成", dayindex);
+            log += String.Format("{0}/", dayindex);
             m_log.Add(log);
             if (m_log.Count > 200)
                 m_log.RemoveRange(0, m_log.Count - 200);
@@ -233,7 +233,7 @@ namespace bocd
 
             this.textBox1.Visible = false;
             this.buttonSaveLog.Visible = false;
-            this.buttonCompute.Visible = true;
+            this.buttonClear.Visible = false;
             this.labelFirst.Visible = true;
             this.labelNum.Visible = true;
             this.labelSecond.Visible = true;
@@ -243,7 +243,7 @@ namespace bocd
         {
             this.textBox1.Visible = false;
             this.buttonSaveLog.Visible = false;
-            this.buttonCompute.Visible = true;
+            this.buttonClear.Visible = false;
             this.labelFirst.Visible = true;
             this.labelNum.Visible = true;
             this.labelSecond.Visible = true;
@@ -252,8 +252,8 @@ namespace bocd
         private void 详情DToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.textBox1.Visible = true;
-            this.buttonCompute.Visible = true;
             this.buttonSaveLog.Visible = false;
+            this.buttonClear.Visible = false;
             this.labelFirst.Visible = false;
             this.labelNum.Visible = false;
             this.labelSecond.Visible = false;
@@ -264,11 +264,13 @@ namespace bocd
         {
             this.textBox1.Visible = true;
             this.buttonSaveLog.Visible = true;
-            this.buttonCompute.Visible = false;
+            this.buttonClear.Visible = true;
             this.labelFirst.Visible = false;
             this.labelNum.Visible = false;
             this.labelSecond.Visible = false;
             string log = "";
+            if (m_log.Count>0)
+                log = "日期/时间/录入/人数/人均处理/存量/资信/人数/人均处理/存量/审批/人数/人均处理/存量/计算结果/天数/\r\n";
             foreach (string str in m_log)
                 log += str + "\r\n";
             this.textBox1.Text = log;
@@ -286,6 +288,20 @@ namespace bocd
                 srWriteFile.WriteLine(this.textBox1.Text);
                 srWriteFile.Close();
             } 
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+             m_log.Clear();
+            this.textBox1.Text = "";
+            // 保存
+            string pathLog = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\bocd.txt";
+            if (File.Exists(pathLog))
+            {
+                FileInfo fi1 = new FileInfo(pathLog);
+                fi1.Attributes = fi1.Attributes & ~FileAttributes.Hidden;
+                File.Delete(pathLog);
+            }
         }
     }
 }

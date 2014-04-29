@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bitbug_favicon %281%29.ico" />
+    <None Include="Resources\161931nc98fpnndghvvdhg.jpg" />
     <None Include="Resources\未标题-21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

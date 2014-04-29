@@ -168,7 +168,7 @@
         RudN65tdA8sHzg46DF645Xrr8m2v29fvrLwzMBQydHc4cnjkLvvu5L2key/vZ9yff7DpIfph4SOpR+WP
         lR7X/aj3Y+uI5ciZUdfRvidBTx6Mscae/5T+04fx/Kfkp+UTqhONk2aTp6fcp24+W/1s/Hnq8/npgp+l
         f65+ofviu18cf+mbWTUz/pL/cuHX4lfyr468Xva6e9Z/9vGb5Dfzc4Vv5d8efcd41/s+7P3EfOYH7IeK
-        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAAOvQAADr0BR/uQrQAAmgBJREFUeF7tvXVclWn3
+        j3ofuz55f3q4kLyw8Bv3hPP74uYdwgAAAAlwSFlzAAAOvAAADrwBlbxySQAAmgBJREFUeF7tvXVclWn3
         NX4hdqIiUkqoCCIqKoiSEpKiAgLSSHe3gaCACkiDgmB3d3c74+QzHc/zzBjY0qGe39rX4SBijFPf9/d9
         3/ljfw5xOJy473Xvvfbaa7OaQ0bs/WHI6g+ZsaaDtoiZvxn1h6azmsMGrOaoAas9aohbYbzx9RE9VnfB
         Tb31m0qjlz/vYw2nnFjd3kmseZ8Wq98zgdWe82RNX69hzT9vZA3H8tkjKx/22D7gzXAIZE8iF/ypqAtL
@@ -829,9 +829,6 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>30</value>
   </metadata>
