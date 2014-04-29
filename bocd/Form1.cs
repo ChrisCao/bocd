@@ -141,6 +141,7 @@ namespace bocd
                 if (m_Num[i] == 0 || m_Every[i] == 0)
                 {
                     Form3 form3 = new Form3();
+                    form3.setString("人数和每日完成数不能为0！", "请设置人数和每日完成数！");
                     form3.ShowDialog();
                     return;
                 }
@@ -237,6 +238,13 @@ namespace bocd
             this.labelFirst.Visible = true;
             this.labelNum.Visible = true;
             this.labelSecond.Visible = true;
+
+            if (m_log.Count >= 180)
+            {
+                Form3 form3 = new Form3();
+                form3.setString(string.Format("日志条目已达{0}条！", m_log.Count), "请及时导出！");
+                form3.ShowDialog();
+            }
         }
 
         private void 主页HToolStripMenuItem_Click(object sender, EventArgs e)
